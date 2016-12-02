@@ -1,0 +1,21 @@
+﻿@using PrototypeAdal.Domain.Entities
+@model IEnumerable<ReleaseRequest>
+
+@{
+    ViewBag.Title = "ReleaseRequests";
+}
+<h2><b>Releases submitted for approval</b></h2>
+@foreach (var p in Model)
+{
+    <div>
+        <h3>@p.Product</h3>
+        <h4>@p.Branch</h4>
+        <h4>@p.VersionNumber</h4>
+        <h4>@p.ReleaseNotes</h4>
+        <input type="submit" value="Approve" />
+        <input type="submit" value="Reject" />
+
+    </div>
+}
+
+
