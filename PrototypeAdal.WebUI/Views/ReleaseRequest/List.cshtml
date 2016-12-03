@@ -8,14 +8,19 @@
 @foreach (var p in Model)
 {
     <div>
-        <h3>@p.Product</h3>
-        <h4>@p.Branch</h4>
-        <h4>@p.VersionNumber</h4>
+        <h3>@p.Name</h3>
+        <h4>@p.ApprovalStatusId</h4>
+        <h4>@p.ApprovedBy</h4>
+        <h4>@p.ApprovedDateTime</h4>
         <h4>@p.ReleaseNotes</h4>
+        <h4>@p.SubmissionDateTime</h4>
         <input type="submit" value="Approve" />
         <input type="submit" value="Reject" />
 
     </div>
 }
 
-
+<!--<h3>p.Product</h3>
+        <h4>p.Branch</h4>
+        <h4>p.VersionNumber</h4>
+        <h4>p.ReleaseNotes</h4>-->

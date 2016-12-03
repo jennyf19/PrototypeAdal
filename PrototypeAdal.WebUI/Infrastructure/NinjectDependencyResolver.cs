@@ -6,6 +6,7 @@ using System.Linq;
 using Moq;
 using PrototypeAdal.Domain.Abstract;
 using PrototypeAdal.Domain.Entities;
+using PrototypeAdal.Domain.Concrete;
 
 namespace PrototypeAdal.WebUI.Infrastructure
 {
@@ -31,7 +32,7 @@ namespace PrototypeAdal.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            Mock<IReleaseRequestRepository> mock = new Mock<IReleaseRequestRepository>();
+            /*Mock<IReleaseRequestRepository> mock = new Mock<IReleaseRequestRepository>();
             mock.Setup(m => m.ReleaseRequests).Returns(new List<ReleaseRequest>
             {
                 new ReleaseRequest
@@ -52,7 +53,8 @@ namespace PrototypeAdal.WebUI.Infrastructure
                 }
             });
 
-            _kernel.Bind<IReleaseRequestRepository>().ToConstant(mock.Object);
+            _kernel.Bind<IReleaseRequestRepository>().ToConstant(mock.Object);*/
+            _kernel.Bind<IReleaseRequestRepository>().To<EfReleaseRequestRepository>();
         }
     }
 }
