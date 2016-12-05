@@ -11,5 +11,11 @@ namespace PrototypeAdal.Domain.Concrete
     public class EfDbContext : DbContext
     {
         public DbSet<ReleaseRequest> ReleaseRequests { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<EfDbContext>(null);
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
